@@ -1,6 +1,13 @@
 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+const DATABASE_URL =process.env.DATABASE_URL
+
+mongoose.connect( DATABASE_URL || 'default_database_url_here');
 
 
 const EventSchema = new Schema({

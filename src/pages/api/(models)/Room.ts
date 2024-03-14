@@ -1,3 +1,12 @@
+import mongoose from "mongoose"
+const {Schema} = mongoose;
+import dotenv from 'dotenv';
+
+dotenv.config();
+const DATABASE_URL =process.env.DATABASE_URL
+
+mongoose.connect( DATABASE_URL || 'default_database_url_here');
+// mongoose.connect(process.env.MONGODB_URL);
 
 const SalesSchema = new Schema({
     title: {

@@ -1,5 +1,12 @@
 
+import mongoose from "mongoose"
+const {Schema} = mongoose;
+import dotenv from 'dotenv';
 
+dotenv.config();
+const DATABASE_URL =process.env.DATABASE_URL
+
+mongoose.connect( DATABASE_URL || 'default_database_url_here');
 const commentSchema = new Schema({
     comment: String,
     createdAt: {
@@ -27,4 +34,6 @@ const commentSchema = new Schema({
     
     });
 
- module.exports= new mongoose.model("Comment", commentSchema);
+ 
+  module.exports =  mongoose.model("Comment", commentSchema);
+
