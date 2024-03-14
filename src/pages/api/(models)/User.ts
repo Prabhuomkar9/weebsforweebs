@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const DATABASE_URL =process.env.DATABASE_URL
-try{
+
 mongoose.connect( DATABASE_URL || 'default_database_url_here');
 
 const UserSchema= new Schema({
@@ -42,10 +42,6 @@ const UserSchema= new Schema({
 });
 
 
-const UserS = mongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
-module.exports = UserS;
-}
-catch(err){
-    console.log("couldnt connect")
-}
+export default User;
