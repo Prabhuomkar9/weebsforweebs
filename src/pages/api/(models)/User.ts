@@ -42,9 +42,9 @@ const UserSchema= new Schema({
 });
 
 
-const User = mongoose.model('User', UserSchema);
+const UserS = mongoose.model('User', UserSchema);
 
-module.exports = User;
+module.exports = UserS;
 }
 catch(err){
     console.log("couldnt connect")
