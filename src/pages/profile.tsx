@@ -9,8 +9,12 @@ import {
   MDBCardText,
   MDBBtn
 } from 'mdb-react-ui-kit';
+import { NextPage } from 'next';
+import { useSession } from 'next-auth/react';
 
-export default function ProfilePage(): JSX.Element {
+const ProfilePage: NextPage = () => {
+  const { data: session } = useSession();
+
   return (
     <section className='p-10 -mt-20 rounded-2xl bg-gradient-to-r  bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100'>
       <MDBContainer className="text-center text-white">
@@ -42,14 +46,18 @@ export default function ProfilePage(): JSX.Element {
                   </div>
                 </div>
                 <div className="button w-full flex justify-evenly">
-                <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Edit Profile</MDBBtn>
-                <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Dashboard</MDBBtn>
+                  <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Edit Profile</MDBBtn>
+                  {session && session.user && session.user.email && session.user.email === "nnm22is002@nmamit.in" &&
+                    <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Dashboard</MDBBtn>
+                  }
                 </div>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
-    </section>
+    </section >
   );
 }
+
+export default ProfilePage

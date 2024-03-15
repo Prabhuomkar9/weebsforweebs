@@ -1,23 +1,22 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import Image from 'next/image'
-import Style from "../index.module.css"
-const Neighbourhood = () => {
+const MobileNeigh = () => {
   return (
     <>
       <div className="container md:hidden  mt-10 ">
-      <div style={{ position: 'relative', width: '400px', height: '400px' }}>
-      <h1 className=' font-extrabold font-serif text-6xl'>Connect with your neighbourhood</h1>
-                  <div className="butons flex justify-evenly w-full my-10">
-                    <Button>Sign up</Button>
-                    <Button>Log in</Button>
-                  </div>
-          
+        <div style={{ position: 'relative', width: '400px', height: '400px' }}>
+          <h1 className=' font-extrabold font-serif text-6xl'>Connect with your neighbourhood</h1>
+          <div className="butons flex justify-evenly w-full my-10">
+            <Button>Sign up</Button>
+            <Button>Log in</Button>
+          </div>
+
         </div>
         <section className=" body-font">
           <div className="container  ">
             <div className="flex flex-wrap   text-center">
-              
+
               <div className=" px-4">
                 <div className="imgs relative h-96 w-96">
 
@@ -44,16 +43,16 @@ const Neighbourhood = () => {
                     alt="Picture of the author"
                     fill
                   />
-            
 
+
+                </div>
               </div>
             </div>
           </div>
-      </div>
-    </section >
-       </div >
+        </section >
+      </div >
     </>
   )
 }
 
-export default Neighbourhood
+export default MobileNeigh

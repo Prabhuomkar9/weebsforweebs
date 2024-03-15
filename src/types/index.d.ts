@@ -1,10 +1,10 @@
 export interface User {
-  id: number,
-  name: string,
+  Type: string,
+  dateOfBirth: string,
   email: string,
-  role: string,
-  phoneNumber: string,
-  apartment: string
+  username: string,
+  __v: number,
+  _id: string
 }
 
 export interface Apartment {

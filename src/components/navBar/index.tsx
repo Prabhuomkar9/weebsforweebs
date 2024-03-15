@@ -6,18 +6,12 @@ import { toast } from 'sonner';
 import { FaGoogle } from "react-icons/fa";
 import { signIn, useSession, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import SignIn from '../signIn';
 
 const NavBar: FunctionComponent = () => {
   const { data: session } = useSession()
 
-  const handleSignIn = () => {
-    toast.loading("Logging in")
-    signIn("google")
-      .then((res) => {
-        toast.dismiss()
-        toast.success("Login Successful")
-      })
-  }
+
 
   const handleSignOut = () => {
     toast.loading("Logging out")
@@ -59,9 +53,7 @@ const NavBar: FunctionComponent = () => {
           </div>
           <div className='w-1/4 flex flex-row justify-center items-center gap-5'>
             {!session ?
-              <Button className='flex flex-row justify-center items-center gap-1' onClick={handleSignIn}>
-                <FaGoogle />Sign In
-              </Button>
+              <SignIn />
               :
               <>
                 <Button className='flex flex-row justify-center items-center gap-1' onClick={handleSignOut}>
