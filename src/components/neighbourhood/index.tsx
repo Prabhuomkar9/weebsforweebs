@@ -1,59 +1,49 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
-import Style from "./index.module.css"
-const Neighbourhood = () => {
+import { landingPageData } from '@/constants'
+import Link from 'next/link'
+import { toast } from 'sonner'
+
+const NeighbourHood = () => {
   return (
-    <>
-      <div className="container hidden md:block  min-h-[50vh] w-[70vw] mt-10 rounded-3xl">
-        <section className=" body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-wrap -mx-4 -mb-10 text-center">
-              <div className="sm:w-1/2 mb-10 px-4">
-                <div className="side w-full h-full flex justify-center flex-col items-center ">
-                  <h1 className='m-5 font-extrabold font-serif text-6xl'>Connect with your neighbourhood</h1>
-                  <div className="butons flex justify-evenly w-full">
-                    <Button>Sign up</Button>
-                    <Button>Log in</Button>
-                  </div>
-                </div>
-              </div>
-              <div className="sm:w-1/2 mb-10 px-4">
-                <div className="imgs relative h-96 w-96">
-
-                  <Image className={`absolute z-50 ${Style.guy1}`}
-                    src={"/assets/svg/guy1.svg"}
-                    alt="Picture of the author"
-                    fill
-                  />
-
-                  <Image className={`absolute z-50 ${Style.guy2}`}
-                    src={"/assets/svg/guy2.svg"}
-                    alt="Picture of the author"
-                    fill
-                  />
-
-                  <Image className={`absolute z-50 ${Style.guy2}`}
-                    src={"/assets/svg/guy3.svg"}
-                    alt="Picture of the author"
-                    fill
-                  />
-
-                  <Image className='absolute z-0'
-                    src={"/assets/svg/back.svg"}
-                    alt="Picture of the author"
-                    fill
-                  />
-            
-
-              </div>
-            </div>
-          </div>
+    <div className="w-full md:h-[80vh] flex flex-row justify-center items-center gap-5">
+      <div className="w-1/3 h-full flex justify-center flex-col items-center gap-10">
+        <span className='leading-normal font-extrabold font-serif text-6xl'>{landingPageData.internal.tagline}</span>
+        <p className='leading-relaxed text-wrap text-lg'>{landingPageData.internal.description}</p>
+        <div className='w-full flex flex-row justify-around items-center'>
+          <Button variant="secondary" size="lg" onClick={() => {
+            toast.success("sign up")
+          }} className='text-lg font-semibold'>Sign Up</Button>
+          <Button variant="secondary" size="lg" onClick={() => {
+            toast.success("signIn")
+          }} className='text-lg font-semibold'>Sign In</Button>
+        </div>
       </div>
-    </section >
-       </div >
-    </>
+      <div className='relative h-4/5 aspect-square'>
+        <Image className="absolute z-50 animate-happy-jump"
+          src={"/assets/svg/landingInternalLeft.svg"}
+          alt="leftGuy"
+          fill
+        />
+        <Image className="absolute z-50 animate-happy-jump delay-300"
+          src={"/assets/svg/landingInternalMiddle.svg"}
+          alt="rightGirl"
+          fill
+        />
+        <Image className="absolute z-50 animate-happy-jump delay-300"
+          src={"/assets/svg/landingInternalRight.svg"}
+          alt="rightGuy"
+          fill
+        />
+        <Image className="absolute -z-50"
+          src={"/assets/svg/landingInternalBG.svg"}
+          alt="background"
+          fill
+        />
+      </div>
+    </div>
   )
 }
 
-export default Neighbourhood
+export default NeighbourHood

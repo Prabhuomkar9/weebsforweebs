@@ -9,7 +9,7 @@ const SecretaryDashBoard = () => {
       <Tabs defaultValue="account" className="w-full">
         <TabsList className='w-full'>
           <TabsTrigger className='w-full' value="users">Users</TabsTrigger>
-          <TabsTrigger className='w-full' value="apartments">Apartments</TabsTrigger>
+          <TabsTrigger className='w-full' value="apartments">Maintainance</TabsTrigger>
         </TabsList>
         <TabsContent className='w-full' value="users">
           <UsersTab asker="SECRETARY" />

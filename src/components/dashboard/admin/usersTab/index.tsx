@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import React, { FunctionComponent, useEffect, useState } from 'react'
 import columns from './columns'
 import { User } from '@/types'
+import { useSession } from 'next-auth/react'
 
 const users: User[] = [
   {
@@ -26,6 +27,22 @@ const users: User[] = [
 ]
 
 const UsersTab: FunctionComponent<{ asker: "SECRETARY" | "ADMIN" }> = ({ asker }) => {
+  const { data: session } = useSession()
+
+  const [loading, setLoading] = useState<boolean>(true)
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/user", {
+      method: 'GET'
+    })
+      .then((res) => {
+        console.log(res)
+        res.json()
+        setLoading(false)
+      })
+  }, [])
+
+
   const [filteredUsers, setFilteredUsers] = useState<User[]>(users)
   const [userNameQuery, setUserNameQuery] = useState('')
 
@@ -40,13 +57,13 @@ const UsersTab: FunctionComponent<{ asker: "SECRETARY" | "ADMIN" }> = ({ asker }
 
   return (
     <div className='w-full h-full flex flex-col justify-start items-center gap-3'>
-      <Sheet>
+      <Sheet >
         <SheetTrigger className='self-end'>
           <Button>
             Filters
           </Button>
         </SheetTrigger>
-        <SheetContent>
+        <SheetContent className='z-[999999]'>
           <SheetHeader className='gap-3'>
             <SheetTitle className='text-4xl font-bold'>
               Filters
@@ -63,7 +80,9 @@ const UsersTab: FunctionComponent<{ asker: "SECRETARY" | "ADMIN" }> = ({ asker }
         </SheetContent>
       </Sheet>
       <div className='w-full'>
-        <DataTable columns={columns} data={filteredUsers} />
+        {loading ? <>Hello i am loading</> :
+          <DataTable columns={columns} data={filteredUsers} />
+        }
       </div>
     </div>
   )
