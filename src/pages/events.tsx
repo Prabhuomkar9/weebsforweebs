@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Image from 'next/image'
 import { ScrollArea } from '@/components/ui/scroll-area'
 
+
 const Events: NextPage = () => {
   return (
     <div className='w-full h-full flex flex-col justify-start py-10 items-center gap-10'>
@@ -14,14 +15,14 @@ const Events: NextPage = () => {
           <div className='flex flex-col flex-wrap justify-center items-center gap-10' >
             {eventData.map((event, idx) => {
               return (
-                <Card key={idx}>
+                <Card className='bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 text-white font-semibold' key={idx}>
                   <CardHeader>
                     <CardTitle>{event.name}</CardTitle>
-                    <CardDescription>{event.description}</CardDescription>
+                    <CardDescription className='text-slate-200'>{event.description}</CardDescription>
                   </CardHeader>
                   <CardContent className='flex flex-col justify-center items-center gap-3'>
                     <div className='relative max-w-screen-md w-screen aspect-video flex justify-center items-center flex-col'>
-                      <Image fill src={`${event.image}`} alt={event.name} />
+                      <Image fill className='rounded-lg' src={`${event.image}`} alt={event.name} />
                     </div>
                     <div className='flex flex-col w-full h-1/2'>
                       <p>{event.date}</p>
@@ -37,8 +38,12 @@ const Events: NextPage = () => {
           </div>
         </ScrollArea>
       </div>
+
+    
     </div>
   )
 }
 
 export default Events
+
+
