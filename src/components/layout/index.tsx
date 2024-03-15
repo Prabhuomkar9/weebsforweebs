@@ -5,9 +5,11 @@ import { ToastContainer } from "react-toastify";
 import { Analytics } from "@vercel/analytics/react";
 import CustomHead from "../head";
 
+
 const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
+
       <CustomHead />
       <NavBar />
       <main
@@ -17,6 +19,7 @@ const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
       <Footer />
       <ToastContainer pauseOnFocusLoss={false} />
       <Analytics />
+
     </>
   );
 };

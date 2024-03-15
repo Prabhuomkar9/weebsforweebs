@@ -1,0 +1,8 @@
+.navul {
+    width: 70%;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.1), 0 6px 8px rgba(0, 0, 0, 0.1);
+    background-color: #1e3a8a;
+}
+.navbar{
+    margin-top: -20px;
+}
