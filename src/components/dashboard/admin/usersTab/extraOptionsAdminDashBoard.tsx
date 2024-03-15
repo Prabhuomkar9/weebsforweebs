@@ -8,7 +8,7 @@ import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { FunctionComponent, useEffect, useState } from "react"
 
 
-const Temporary: FunctionComponent<{ user: User }> = ({ user }) => {
+const ExtraOptionsAdminDashBoard: FunctionComponent<{ user: User }> = ({ user }) => {
   const apartments: Apartment[] = [
     {
       id: 1,
@@ -26,6 +26,7 @@ const Temporary: FunctionComponent<{ user: User }> = ({ user }) => {
     }
   ]
   const [addModalOpen, setAddModalOpen] = useState<boolean>(false)
+  const [removeModalOpen, setRemoveModalOpen] = useState<boolean>(false)
   const [selectedApartments, setSelectedApartments] = useState<Apartment[]>(apartments)
   const [apartmentId, setApartmentId] = useState<Apartment["id"]>(1)
   const [apartmentQuery, setApartmentQuery] = useState<Apartment["name"]>("")
@@ -39,6 +40,7 @@ const Temporary: FunctionComponent<{ user: User }> = ({ user }) => {
     partiallyFilteredApartments = partiallyFilteredApartments?.filter((apartment) => {
       return apartment.id.toString().includes(apartmentQuery.toLowerCase())
     })
+    setSelectedApartments((prev) => partiallyFilteredApartments)
   }, [apartmentQuery])
 
   return (
@@ -46,6 +48,7 @@ const Temporary: FunctionComponent<{ user: User }> = ({ user }) => {
       <Dialog open={addModalOpen} >
         <DialogContent onCloseHandler={() => {
           setAddModalOpen(false)
+          setRemoveModalOpen(false)
         }}>
           <DialogHeader>
             <DialogTitle>Are you absolutely sure?
@@ -103,11 +106,11 @@ const Temporary: FunctionComponent<{ user: User }> = ({ user }) => {
           </DropdownMenuItem>
           <DropdownMenuItem>
             <Button
-              onClick={() => { }}>Remove from apartmnet</Button>
+              onClick={() => { setRemoveModalOpen(true) }}>Remove from apartmnet</Button>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </>)
 }
 
-export default Temporary
+export default ExtraOptionsAdminDashBoard

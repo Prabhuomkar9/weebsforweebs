@@ -2,7 +2,7 @@
 
 import { Checkbox } from "@/components/ui/checkbox"
 import { ColumnDef } from "@tanstack/react-table"
-import Temporary from "./temp"
+import ExtraOptionsAdminDashBoard from "./extraOptionsAdminDashBoard"
 import { User } from "@/types"
 
 const columns: ColumnDef<User>[] = [
@@ -32,9 +32,9 @@ const columns: ColumnDef<User>[] = [
     accessorKey: "id",
     header: ({ column }) => {
       return (
-        <>
+        <span className="text-white font-bold text-lg">
           User ID
-        </>
+        </span>
       )
     },
     cell: ({ row }) => <div >{row.getValue("id")}</div>,
@@ -43,9 +43,9 @@ const columns: ColumnDef<User>[] = [
     accessorKey: "name",
     header: ({ column }) => {
       return (
-        <>
+        <span className="text-white font-bold text-lg">
           User Name
-        </>
+        </span>
       )
     },
     cell: ({ row }) => <div >{row.getValue("name")}</div>,
@@ -54,9 +54,9 @@ const columns: ColumnDef<User>[] = [
     accessorKey: "email",
     header: ({ column }) => {
       return (
-        <>
+        <span className="text-white font-bold text-lg">
           Email
-        </>
+        </span>
       )
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
@@ -65,9 +65,9 @@ const columns: ColumnDef<User>[] = [
     accessorKey: "phoneNumber",
     header: ({ column }) => {
       return (
-        <>
+        <span className="text-white font-bold text-lg">
           Phone Number
-        </>
+        </span>
       )
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("phoneNumber")}</div>,
@@ -76,9 +76,9 @@ const columns: ColumnDef<User>[] = [
     accessorKey: "apartment",
     header: ({ column }) => {
       return (
-        <>
+        <span className="text-white font-bold text-lg">
           Apartment
-        </>
+        </span>
       )
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("apartment")}</div>,
@@ -90,7 +90,7 @@ const columns: ColumnDef<User>[] = [
       const user = row.original
 
       return (
-        <Temporary user={user} />
+        <ExtraOptionsAdminDashBoard user={user} />
       )
     },
   },

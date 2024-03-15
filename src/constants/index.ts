@@ -1,9 +1,10 @@
 export const siteMetadata = {
-  title: "WeebsForWeebs",
+  title: "Hello Neighbour",
   author: "Omkar Prabhu, Avyay Nayak, Karthik Mallya, Sayeem Ahmed",
   description:
     "A place for community to connect to each other as well as show thier harmonity to the world",
   siteUrl: "https://weebsforweebs.vercel.app/",
+  imageUrl: "/assets/logo.png",
   address: "N.M.A.M. Institute of Technology, Nitte, Kalya, Karnataka 574110",
 };
 

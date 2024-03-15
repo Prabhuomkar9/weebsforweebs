@@ -9,8 +9,8 @@ const AdminDashBoard = () => {
       <h1 className='text-5xl text-center md:text-6xl font-semibold'>Welcome to Admin Dashboard</h1>
       <Tabs defaultValue="account" className="w-full">
         <TabsList className='w-full'>
-          <TabsTrigger className='w-full text-xl' value="users">Users</TabsTrigger>
-          <TabsTrigger className='w-full text-xl' value="apartments">Apartments</TabsTrigger>
+          <TabsTrigger className='w-full' value="users">Users</TabsTrigger>
+          <TabsTrigger className='w-full' value="apartments">Apartments</TabsTrigger>
         </TabsList>
         <TabsContent className='w-full p-5' value="users">
           <UsersTab asker='ADMIN' />

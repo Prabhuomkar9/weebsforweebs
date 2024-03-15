@@ -39,7 +39,7 @@ const rooms: Room[] = [
 
 const Rooms: NextPage = () => {
   return (
-    <div>
+    <div className='grid grid-cols-2'>
       {rooms.map((room, idx) => {
         return (
           <Card id={idx.toString()}>
