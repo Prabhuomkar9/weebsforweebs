@@ -6,24 +6,28 @@ import { ToastContainer } from "react-toastify";
 import { Analytics } from "@vercel/analytics/react";
 import CustomHead from "../head";
 
+
 const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
+    
       <CustomHead />
       <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="light"
         enableSystem
         disableTransitionOnChange>
         <NavBar />
         <main
-          className={`min-w-screen relative flex min-h-screen flex-col items-center justify-center bg-black text-white`}>
+          className={`min-w-screen relative flex min-h-screen flex-col items-center justify-center `}>
           {children}
+          
         </main>
         <Footer />
         <ToastContainer pauseOnFocusLoss={false} />
       </ThemeProvider>
       <Analytics />
+     
     </>
   );
 };
