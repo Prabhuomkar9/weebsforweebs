@@ -6,7 +6,7 @@ import { LandingPageData } from '@/constants';
 const Room = () => {
   return (
     <>
-      <div className="  hidden     container w-[70vw] h-[35vw] bg-[#7441c2] md:flex rounded-3xl">
+      <div className="  hidden     container w-[70vw] h-[35vw]  md:flex rounded-3xl">
         <div className="img w-1/2 h-full ">
           <div style={{ position: 'relative', width: '500px', height: '100%' }}>
             <Image

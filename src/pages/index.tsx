@@ -9,7 +9,7 @@ import MobileNeigh from "@/components/neighbourhood/MobileNeigh";
 export default function Home() {
   return (
     <div
-      className={`h-full w-full flex flex-col justify-center items-center bg-purple-300`}>
+      className={`h-full w-full flex flex-col justify-center items-center `}>
         <Room/>
         <MobileRoom/>
         <Neighbourhood/>

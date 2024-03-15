@@ -5,7 +5,7 @@ import Style from "./index.module.css"
 const Neighbourhood = () => {
   return (
     <>
-      <div className="container hidden md:block bg-[#7441c2] min-h-[50vh] w-[70vw] mt-10 rounded-3xl">
+      <div className="container hidden md:block  min-h-[50vh] w-[70vw] mt-10 rounded-3xl">
         <section className=" body-font">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-wrap -mx-4 -mb-10 text-center">

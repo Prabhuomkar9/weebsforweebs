@@ -12,7 +12,7 @@ const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
       <CustomHead />
       <NavBar />
       <main
-        className={`min-w-screen relative flex min-h-screen flex-col items-center justify-center text-white`}>
+        className={`mt-20  min-w-screen relative flex min-h-screen flex-col items-center justify-center text-white`}>
         {children}
       </main>
       <Footer />
