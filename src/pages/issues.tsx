@@ -1,11 +1,14 @@
 import React from 'react'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const issues = () => {
+  const router = useRouter()
   return (
     <div>
-        <div className="issue mt-10 flex justify-center items-center"> <button className="hover:text-white hover:bg-purple-500 rounded-xl py-3 px-7 border bg-white text-purple-500">Create an Issue</button></div>
+        <div className="issue mt-10 flex justify-center items-center"> <button className="hover:text-white hover:bg-purple-500 rounded-xl py-3 px-7 border bg-white text-purple-500" onClick={() =>{
+    router.push("/forms/rooms")}}>Create an Issue</button></div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-20">
       
         <Card className="bg-gray-400 relative bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 shadow-md rounded-lg p-10 overflow-hidden">
