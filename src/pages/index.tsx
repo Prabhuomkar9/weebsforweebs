@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { toast } from "react-toastify";
 import Room from "@/components/room";
-import Neighbourhood from "@/components/neighbourhood";
+import NeighbourHood from "@/components/neighbourHood";
 
 
 export default function Home() {
   return (
     <div
-      className={`h-full w-full flex flex-col justify-center items-center`}>
+      className={`h-full w-full mb-20 flex flex-col justify-center items-center`}>
       <Room />
-      <Neighbourhood />
+      <NeighbourHood />
     </div>
   );
 }

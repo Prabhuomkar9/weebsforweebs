@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,7 +18,11 @@ const config = {
       },
     },
     extend: {
+      fontSize: {
+        "3.5xl": ["2.0625rem", "2.375rem"]
+      },
       colors: {
+        navbar: "#510031",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -67,10 +71,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "happy-jump": {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-15px)" },
+          "100%": { transform: "translateY(0)" },
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "happy-jump": "happy-jump 1s ease-in-out infinite",
       },
     },
   },

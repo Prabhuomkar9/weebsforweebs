@@ -26,6 +26,21 @@ const users: User[] = [
 ]
 
 const UsersTab: FunctionComponent<{ asker: "SECRETARY" | "ADMIN" }> = ({ asker }) => {
+
+  const [loading, setLoading] = useState<boolean>(true)
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/user", {
+      method: 'GET'
+    })
+      .then((res) => {
+        console.log(res)
+        res.json()
+        setLoading(false)
+      })
+  }, [])
+
+
   const [filteredUsers, setFilteredUsers] = useState<User[]>(users)
   const [userNameQuery, setUserNameQuery] = useState('')
 
@@ -63,7 +78,9 @@ const UsersTab: FunctionComponent<{ asker: "SECRETARY" | "ADMIN" }> = ({ asker }
         </SheetContent>
       </Sheet>
       <div className='w-full'>
-        <DataTable columns={columns} data={filteredUsers} />
+        {loading ? <>Hello i am loading</> :
+          <DataTable columns={columns} data={filteredUsers} />
+        }
       </div>
     </div>
   )

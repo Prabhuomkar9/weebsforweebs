@@ -14,3 +14,19 @@ export interface Apartment {
   numberOfRooms: number,
   numberOfOccupants: number
 }
+
+export interface Room {
+  roomNumber: number,
+  roomType: "RENTAL" | "OWNED",
+  description: string
+  price: number,
+  location: string,
+  bedrooms: number,
+  bathrooms: number,
+  size: number,
+  images: string[]
+  agent: {
+    name: string,
+    contact: number
+  },
+}
