@@ -8,7 +8,7 @@ const Room = () => {
   return (
     <>
       <div className="w-full md:h-[80vh] flex flex-row justify-center items-center gap-5">
-        <div className='relative h-4/5 aspect-square'>
+        <div className='relative h-full aspect-square'>
           <Image
             src={"/assets/svg/room.svg"}
             alt="room.svg"

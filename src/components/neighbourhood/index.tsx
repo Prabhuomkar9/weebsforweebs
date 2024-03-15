@@ -12,12 +12,12 @@ const NeighbourHood = () => {
         <span className='leading-normal font-extrabold font-serif text-6xl'>{landingPageData.internal.tagline}</span>
         <p className='leading-relaxed text-wrap text-lg'>{landingPageData.internal.description}</p>
         <div className='w-full flex flex-row justify-around items-center'>
-          <Button variant="secondary" size="lg" onClick={() => {
-            toast.success("sign up")
-          }} className='text-lg font-semibold'>Sign Up</Button>
-          <Button variant="secondary" size="lg" onClick={() => {
-            toast.success("signIn")
-          }} className='text-lg font-semibold'>Sign In</Button>
+          <Link href="/gallery">
+            <Button variant="secondary" size="lg" className='text-lg font-semibold'>View Gallery</Button>
+          </Link>
+          <Link href="/issues">
+            <Button variant="secondary" size="lg" className='text-lg font-semibold'>Raise Issue</Button>
+          </Link>
         </div>
       </div>
       <div className='relative h-4/5 aspect-square'>

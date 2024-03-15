@@ -29,7 +29,7 @@ const columns: ColumnDef<User>[] = [
     enableHiding: false,
   },
   {
-    accessorKey: "id",
+    accessorKey: "_id",
     header: ({ column }) => {
       return (
         <span className="text-white font-bold text-lg">
@@ -37,10 +37,10 @@ const columns: ColumnDef<User>[] = [
         </span>
       )
     },
-    cell: ({ row }) => <div >{row.getValue("id")}</div>,
+    cell: ({ row }) => <div >{row.getValue("_id")}</div>,
   },
   {
-    accessorKey: "name",
+    accessorKey: "username",
     header: ({ column }) => {
       return (
         <span className="text-white font-bold text-lg">
@@ -48,7 +48,7 @@ const columns: ColumnDef<User>[] = [
         </span>
       )
     },
-    cell: ({ row }) => <div >{row.getValue("name")}</div>,
+    cell: ({ row }) => <div >{row.getValue("username")}</div>,
   },
   {
     accessorKey: "email",
@@ -62,7 +62,7 @@ const columns: ColumnDef<User>[] = [
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
   {
-    accessorKey: "phoneNumber",
+    accessorKey: "Type",
     header: ({ column }) => {
       return (
         <span className="text-white font-bold text-lg">
@@ -70,10 +70,10 @@ const columns: ColumnDef<User>[] = [
         </span>
       )
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("phoneNumber")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("Type")}</div>,
   },
   {
-    accessorKey: "apartment",
+    accessorKey: "dateOfBirth",
     header: ({ column }) => {
       return (
         <span className="text-white font-bold text-lg">
@@ -81,7 +81,7 @@ const columns: ColumnDef<User>[] = [
         </span>
       )
     },
-    cell: ({ row }) => <div className="lowercase">{row.getValue("apartment")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("dateOfBirth")}</div>,
   },
   {
     id: "actions",

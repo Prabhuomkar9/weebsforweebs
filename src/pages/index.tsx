@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
 import Room from "@/components/room";
-import Neighbourhood from "@/components/neighbourhood";
+import NeighbourHood from "@/components/neighbourHood";
 import MobileRoom from "@/components/room/MobileRoom";
-import MobileNeigh from "@/components/neighbourhood/MobileNeigh";
+import MobileNeigh from "@/components/neighbourHood/MobileNeigh";
 
 
 export default function Home() {
   return (
     <div
       className={`h-full w-full flex flex-col justify-center items-center `}>
-        <Room/>
-        <MobileRoom/>
-        <Neighbourhood/>
-        <MobileNeigh/>
+      <Room />
+      <MobileRoom />
+      <NeighbourHood />
+      <MobileNeigh />
     </div>
   );
 }
