@@ -42,7 +42,7 @@ const Rooms: NextPage = () => {
     <div className='grid grid-cols-2'>
       {rooms.map((room, idx) => {
         return (
-          <Card id={idx.toString()}>
+          <Card key={`${idx}`}>
             <CardHeader>
               <CardTitle>{room.location}</CardTitle>
               <CardDescription>Card Description</CardDescription>
