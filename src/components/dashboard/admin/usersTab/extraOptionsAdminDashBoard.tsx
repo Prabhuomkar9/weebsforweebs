@@ -95,7 +95,7 @@ const ExtraOptionsAdminDashBoard: FunctionComponent<{ user: User }> = ({ user })
         <DropdownMenuContent align="end">
           <DropdownMenuLabel>Actions</DropdownMenuLabel>
           <DropdownMenuItem
-            onClick={() => navigator.clipboard.writeText(user.id.toString())}
+            onClick={() => navigator.clipboard.writeText(user._id)}
           >
             Copy User ID
           </DropdownMenuItem>
