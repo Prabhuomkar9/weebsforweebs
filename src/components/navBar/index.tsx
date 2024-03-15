@@ -4,7 +4,8 @@ import MobileNavBar from "./mobilNavBar";
 const NavBar = () => {
   return (
     <>
-      <nav className="hidden md:flex w-full">this is laptop navbar</nav>
+      <nav className="hidden md:flex w-full">this is laptop navbar
+      </nav>
       <MobileNavBar />
     </>
   );

@@ -12,8 +12,8 @@ const CustomHead = () => {
       (pathname === "/"
         ? ""
         : pathname.charAt(1).toUpperCase() +
-          pathname.split("/")[1]?.slice(1) +
-          " | ") + siteMetadata.title,
+        pathname.split("/")[1]?.slice(1) +
+        " | ") + siteMetadata.title,
     description: siteMetadata.description,
     type: "Website",
     canonicalUrl: siteMetadata.siteUrl + pathname,
