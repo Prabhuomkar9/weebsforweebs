@@ -30,3 +30,17 @@ export interface Room {
     contact: number
   },
 }
+
+export interface Event {
+  image?: {
+    url: string,
+    filename: string
+  },
+  _id: string,
+  Name: string,
+  date: string,
+  description?: string,
+  location: string,
+  createdBy: string,
+  __v: number
+}

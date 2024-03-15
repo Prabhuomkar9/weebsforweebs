@@ -47,7 +47,7 @@ const ProfilePage: NextPage = () => {
                 </div>
                 <div className="button w-full flex justify-evenly">
                   <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Edit Profile</MDBBtn>
-                  {session && session.user && session.user.email && session.user.email === "nnm22is002@nmamit.in" &&
+                  {session && session.user && session.user.email && session.user.email === "prabhuomkar9@gmail.com" &&
                     <MDBBtn color="light" className="text-white rounded-xl p-5 border hover:bg-white hover:text-purple-500">Dashboard</MDBBtn>
                   }
                 </div>
