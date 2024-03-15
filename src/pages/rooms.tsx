@@ -42,8 +42,7 @@ const Rooms: NextPage = () => {
     <div>
       {rooms.map((room, idx) => {
         return (
-
-          <Card>
+          <Card id={idx.toString()}>
             <CardHeader>
               <CardTitle>{room.location}</CardTitle>
               <CardDescription>Card Description</CardDescription>

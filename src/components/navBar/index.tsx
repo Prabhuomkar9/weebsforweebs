@@ -16,8 +16,8 @@ const NavBar: FunctionComponent = () => {
               {
                 navLinks.map((link, index) => {
                   return (
-                    <li className='hover:text-violet-400'>
-                      <Link key={index} href={link.url}>{link.name}</Link>
+                    <li key={index} className='hover:text-violet-400'>
+                      <Link href={link.url}>{link.name}</Link>
                     </li>
                   )
                 })
