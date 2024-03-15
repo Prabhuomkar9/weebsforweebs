@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="bg-[url('/assets/svg/nnnoise3.svg')] bg-cover">
         <Main />
         <NextScript />
       </body>

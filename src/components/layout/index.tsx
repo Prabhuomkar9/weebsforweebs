@@ -9,17 +9,15 @@ import CustomHead from "../head";
 const Layout: FunctionComponent<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
-
       <CustomHead />
       <NavBar />
       <main
-        className={`min-w-screen bg-[url('/assets/svg/nnnoise.svg')] bg-cover relative flex min-h-screen flex-col items-center justify-center bg-purple-950 text-white`}>
+        className={`min-w-screen relative flex min-h-screen flex-col items-center justify-center text-white`}>
         {children}
       </main>
       <Footer />
       <ToastContainer pauseOnFocusLoss={false} />
       <Analytics />
-
     </>
   );
 };

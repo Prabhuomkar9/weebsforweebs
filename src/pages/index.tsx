@@ -7,9 +7,9 @@ import Neighbourhood from "@/components/neighbourhood";
 export default function Home() {
   return (
     <div
-      className={`h-full w-full flex flex-col justify-center items-center bg-purple-300`}>
-        <Room/>
-        <Neighbourhood/>
+      className={`h-full w-full flex flex-col justify-center items-center`}>
+      <Room />
+      <Neighbourhood />
     </div>
   );
 }
