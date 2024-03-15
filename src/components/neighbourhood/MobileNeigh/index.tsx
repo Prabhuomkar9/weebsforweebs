@@ -21,19 +21,19 @@ const Neighbourhood = () => {
               <div className=" px-4">
                 <div className="imgs relative h-96 w-96">
 
-                  <Image className={`absolute z-50 ${Style.guy1}`}
+                  <Image className={`absolute z-50 animate-happy-jump`}
                     src={"/assets/svg/guy1.svg"}
                     alt="Picture of the author"
                     fill
                   />
 
-                  <Image className={`absolute z-50 ${Style.guy2}`}
+                  <Image className={`absolute z-50 animate-happy-jump delay-300`}
                     src={"/assets/svg/guy2.svg"}
                     alt="Picture of the author"
                     fill
                   />
 
-                  <Image className={`absolute z-50 ${Style.guy2}`}
+                  <Image className={`absolute z-50 animate-happy-jump delay-300`}
                     src={"/assets/svg/guy3.svg"}
                     alt="Picture of the author"
                     fill
