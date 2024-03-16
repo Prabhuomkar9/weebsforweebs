@@ -59,7 +59,7 @@ const formSchema = z.object({
 
 })
 
-const rooms: NextPage = () => {
+const Rooms: NextPage = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   })
@@ -279,4 +279,4 @@ const rooms: NextPage = () => {
   )
 }
 
-export default rooms
+export default Rooms
