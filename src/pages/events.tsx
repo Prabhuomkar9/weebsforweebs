@@ -10,7 +10,6 @@ import CreateEvent from '@/components/createEvent'
 
 const Events: NextPage = () => {
   const [events, setEvents] = useState<Event[]>([]);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/event", {
@@ -33,7 +32,6 @@ const Events: NextPage = () => {
   return (
     <div className='w-full h-full flex flex-col justify-start py-10 items-center gap-10'>
       <h1 className='text-5xl font-bold'>Events</h1>
-      {/* {isOpen && */}
       <Dialog>
         <DialogTrigger className='border rounded-md border-slate-200 p-2'>Create Event</DialogTrigger>
         <DialogContent>
@@ -45,11 +43,10 @@ const Events: NextPage = () => {
           </DialogHeader>
         </DialogContent>
       </Dialog>
-      {/* } */}
       <div className='flex flex-col justify-center items-center gap-3'>
         <ScrollArea >
           <div className='flex flex-col flex-wrap justify-center items-center gap-10' >
-            {!events ? <>No events currently active.</> : events.map((event, idx) => {
+            {!events ? <p>No events currently active.</p> : events.map((event, idx) => {
               return (
                 <Card className='bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 text-white font-semibold' key={idx}>
                   <CardHeader>
