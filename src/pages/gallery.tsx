@@ -1,35 +1,21 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import Image from 'next/image'
-import React, { FunctionComponent } from 'react'
+// App.tsx
+import React from 'react';
+import Slideshow from '@/components/slideshow';
 
-const galleryImages: string[] = [
-   "/assets/svg/back.svg",
-   "/assets/svg/back.svg",
-   "/assets/svg/back.svg",
-   "/assets/svg/back.svg",
-   "/assets/svg/back.svg",
-   "/assets/svg/back.svg",
+const App: React.FC = () => {
+  const images = [
+    '/assets/jpg/rroom1.jpg',
+    '/assets/jpg/rroom2.jpg',
+    '/assets/jpg/room3.jpg',
+    '/assets/jpg/rrom4.jpg',
+     // Add more images as needed
+  ];
 
-]
+  return (
+    <div className="flex justify-center items-center h-screen">
+      <Slideshow images={images} />
+    </div>
+  );
+};
 
-const Gallery: FunctionComponent = () => {
-   return (
-      <Carousel>
-         <CarouselContent>
-            {
-               galleryImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                     <div className='relative'>
-                        <Image src={image} alt={image} fill />
-                     </div>
-                  </CarouselItem>))
-            }
-         </CarouselContent>
-         <CarouselPrevious />
-         <CarouselNext />
-      </Carousel>
-
-   )
-}
-
-export default Gallery
+export default App;
