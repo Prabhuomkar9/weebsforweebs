@@ -12,9 +12,6 @@ const NeighbourHood = () => {
         <span className='leading-normal font-extrabold font-serif text-6xl'>{landingPageData.internal.tagline}</span>
         <p className='leading-relaxed text-wrap text-lg'>{landingPageData.internal.description}</p>
         <div className='w-full flex flex-row justify-around items-center'>
-          <Link href="/gallery">
-            <Button variant="secondary" size="lg" className='text-lg font-semibold'>View Gallery</Button>
-          </Link>
           <Link href="/issues">
             <Button variant="secondary" size="lg" className='text-lg font-semibold'>Raise Issue</Button>
           </Link>
