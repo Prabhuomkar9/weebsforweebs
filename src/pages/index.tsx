@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Room from "@/components/room";
-import NeighbourHood from "@/components/neighbourHood";
+import NeighbourHood from "../components/neighbourHood";
 import MobileRoom from "@/components/room/MobileRoom";
 import MobileNeigh from "@/components/neighbourHood/MobileNeigh";
 
