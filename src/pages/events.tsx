@@ -50,7 +50,7 @@ const Events: NextPage = () => {
               return (
                 <Card className='bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 text-white font-semibold' key={idx}>
                   <CardHeader>
-                    <CardTitle>{event.Name}</CardTitle>
+                    <CardTitle>{event.Name || "Event Name"}</CardTitle>
                     <CardDescription className='text-slate-200'>{event.description}</CardDescription>
                   </CardHeader>
                   <CardContent className='flex flex-col justify-center items-center gap-3'>

@@ -28,7 +28,7 @@ import { User } from "@/types"
 
 
 const formSchema = z.object({
-  username: z.string().min(3, {
+  Name: z.string().min(3, {
     message: "Username must be at least 3 characters.",
   }),
   description: z.string().min(5, {
@@ -84,7 +84,7 @@ const CreateEvent: FunctionComponent = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        ...data, email: session?.user?.email || "omkar@gmail.com"
+        ...data, email: session?.user?.email || "john@example.com"
       }),
     }).then((res) => {
       let options: Option[] = []
@@ -108,12 +108,12 @@ const CreateEvent: FunctionComponent = () => {
         <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-6">
           <FormField
             control={form.control}
-            name="username"
+            name="Name"
             render={({ field }) => (
               <FormItem className="w-full">
-                <FormLabel>Username</FormLabel>
+                <FormLabel>Event Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Username" {...field} className="text-black" />
+                  <Input placeholder="Name" {...field} className="text-black" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -203,7 +203,11 @@ const CreateEvent: FunctionComponent = () => {
               <MultipleSelector
                 value={value}
                 onChange={setValue}
-                defaultOptions={users as Option[]}
+                defaultOptions={[
+                  { label: "john_doe", value: "john_doe" },
+                  { label: "Sayeem", value: "Sayeem" },
+                  { label: "Dhanush", value: "Dhanush" }
+                ]}
                 placeholder="Select users to be invited..."
                 emptyIndicator={
                   <p className="text-center text-lg leading-10 text-gray-600 dark:text-gray-400">

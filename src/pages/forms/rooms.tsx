@@ -96,7 +96,8 @@ const Rooms: NextPage = () => {
 
   return (
     <>
-      <div className='w-full h-full flex flex-col justify-center items-center'>
+      <div className='py-10 text-black w-full h-full flex flex-col justify-center items-center'>
+        <h3 className="text-6xl text-white pb-8 font-semibold">Add Room</h3>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col justify-center items-center gap-6">
             <FormField

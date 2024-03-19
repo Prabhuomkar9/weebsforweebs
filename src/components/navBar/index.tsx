@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { navLinks, siteMetadata } from '@/constants';
 import Link from 'next/link';
 import { Button } from '../ui/button';
@@ -10,20 +10,22 @@ import SignIn from '../signIn';
 
 const NavBar: FunctionComponent = () => {
   const { data: session } = useSession()
-
+  const [logged, setLogged] = useState(false)
 
 
   const handleSignOut = () => {
-    toast.loading("Logging out")
-    signOut()
-      .then((res) => {
-        toast.dismiss()
-        toast.success("Logout Successful")
-      })
-      .catch((err) => {
-        toast.dismiss()
-        toast.error("An error occured")
-      })
+    // toast.loading("Logging out")
+    // signOut()
+    //   .then((res) => {
+    //     toast.dismiss()
+    //     toast.success("Logout Successful")
+    //   })
+    //   .catch((err) => {
+    //     toast.dismiss()
+    //     toast.error("An error occured")
+    //   })
+    toast.success("Logged Out")
+    setLogged(false)
   }
 
   return (
@@ -52,14 +54,28 @@ const NavBar: FunctionComponent = () => {
             </Link>
           </div>
           <div className='w-1/4 flex flex-row justify-center items-center gap-5'>
-            {!session ?
-              <SignIn />
+            {!logged ?
+              // <SignIn />
+              <Button className='flex flex-row justify-center items-center gap-1' onClick={() => {
+                // toast.loading("Logging in")
+                // signIn("google")
+                //   .then((res) => {
+                //     console.log(res)
+                //     toast.dismiss()
+                //     toast.success("Login Successful")
+                //   })
+                toast.success("Logged In")
+                setLogged(true)
+
+              }}>
+                <FaGoogle />Sign In
+              </Button>
               :
               <>
                 <Button className='flex flex-row justify-center items-center gap-1' onClick={handleSignOut}>
                   <FaGoogle />Sign Out
                 </Button>
-                <Link className='relative w-12  aspect-square' href="/profile"><Image className='rounded-full' fill src={session.user?.image || ""} alt="" /></Link>
+                <Link className='relative w-12  aspect-square' href="/profile"><Image className='rounded-full' fill src="/pfp.jpg" alt="" /></Link>
               </>
             }
           </div>
